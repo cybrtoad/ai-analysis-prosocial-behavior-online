@@ -6,6 +6,12 @@ This document maps the code and outputs in this repository to the methodology an
 
 ---
 
+## A Note on Naming
+
+Scripts, directories, and output files use the internal name `phase2` (e.g., `src/analyze_phase2.py`, `output/phase2/`, `phase2_tables/`) to refer to what the thesis calls the large-scale analysis. The naming reflects the development history and has been left unchanged to avoid introducing errors.
+
+---
+
 ## Overview of the Pipeline
 
 The full pipeline runs in eight stages. All intermediate and final outputs are pre-computed and included in `output/artifacts/` — the pipeline does not need to be re-run to examine results.
