@@ -118,7 +118,7 @@ If you genuinely cannot decide between two styles, write both in the notes colum
 
 ## Submitting Your Ratings
 
-Save your completed `rating_form.csv` with your rater ID in the filename (e.g., `rating_form_TL.csv`) and return it to Tamara by the agreed deadline.
+Save your completed `rating_form.csv` with your rater ID in the filename (e.g., `rating_form_R2.csv`) and return it to Tamara by the agreed deadline.
 
 If you have questions about a specific record or the rubric, contact Tamara — do not ask the other reviewers.
 
