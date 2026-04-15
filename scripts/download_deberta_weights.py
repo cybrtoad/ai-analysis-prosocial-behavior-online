@@ -16,17 +16,16 @@ training job starts.
 
 Usage
 -----
-  # On an ARCC login node (after activating the soc conda env):
-  module load miniconda3/24.3.0 && source activate soc
+  # Activate your environment, then run:
   python scripts/download_deberta_weights.py
 
-  # Or submit as a SLURM job (recommended if login node internet is slow):
+  # On an HPC cluster with SLURM (recommended if login node internet is slow):
   sbatch scripts/download_weights.sh
 
 Cache location
 --------------
   Default: ~/.cache/huggingface/hub/  (~2 GB total for both models)
-  Override with: HF_HOME=/gscratch/tlinse/hf_cache python scripts/download_deberta_weights.py
+  Override with: HF_HOME=/your/scratch/hf_cache python scripts/download_deberta_weights.py
 """
 
 import sys
@@ -35,8 +34,8 @@ from pathlib import Path
 try:
     from transformers import AutoModel, AutoTokenizer
 except ImportError:
-    print("ERROR: transformers not installed.  Activate the soc conda env first:")
-    print("  module load miniconda3/24.3.0 && source activate soc")
+    print("ERROR: transformers not installed.  Activate your project environment first.")
+    print("  See requirements.txt for dependencies.")
     sys.exit(1)
 
 MODELS = [

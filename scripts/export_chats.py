@@ -2,21 +2,44 @@
 export_chats.py — Convert Claude Code JSONL conversation logs to readable .txt files.
 
 Usage:
-    python scripts/export_chats.py
+    python scripts/export_chats.py [PROJECT_DIR] [OUTPUT_DIR]
 
-Output: one .txt file per conversation in output/chats/
+Arguments:
+    PROJECT_DIR  Path to the Claude Code project directory containing .jsonl files.
+                 Default: ~/.claude/projects/<encoded-repo-name>
+                 The encoded name is the repo's absolute path with slashes replaced
+                 by hyphens (e.g. /home/user/code/myrepo → c--home-user-code-myrepo).
+    OUTPUT_DIR   Directory to write .txt transcripts to.
+                 Default: output/chats/ relative to this script's repo root.
+
+Output: one .txt file per conversation in OUTPUT_DIR/
 """
 
 import json
 import os
 import re
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
 # ── Paths ─────────────────────────────────────────────────────────────────────
 
-PROJECT_DIR = Path(r"C:\Users\tlins\.claude\projects\c--Users-tlins-Documents--code-soc")
-OUTPUT_DIR  = Path(r"C:\Users\tlins\Documents\_code\soc\output\chats")
+ROOT = Path(__file__).resolve().parents[1]
+
+if len(sys.argv) >= 2:
+    PROJECT_DIR = Path(sys.argv[1])
+else:
+    # Claude Code stores project logs under ~/.claude/projects/<encoded-path>
+    # where the encoded path replaces path separators with hyphens.
+    # You may need to adjust this to match your local project directory name.
+    encoded = ROOT.as_posix().lstrip("/").replace("/", "-").replace(":", "")
+    PROJECT_DIR = Path.home() / ".claude" / "projects" / encoded
+
+if len(sys.argv) >= 3:
+    OUTPUT_DIR = Path(sys.argv[2])
+else:
+    OUTPUT_DIR = ROOT / "output" / "chats"
+
 OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
