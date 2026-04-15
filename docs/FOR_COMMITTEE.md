@@ -108,16 +108,18 @@ The API also returns a `confidence` score (0.0–1.0) and an `invalid_triple` fl
 
 **Script:** `src/analyze_phase2.py`, `src/analyze_tier_d.py`
 
-The analysis uses a tiered design that preserves survivorship bias information as outcome data rather than discarding non-responding users.
+Rather than applying a hard filter at ingestion, all records are retained and assigned an analysis tier at query time based on how rich their pre- and post-intervention contexts are. Tiers are **inclusive** — a Tier A record also qualifies for Tiers B, C, and D. Pre- and post-intervention post counts are stored as covariates, not filters, so every record contributes to all analyses for which it has sufficient data.
 
-| Tier | Population | Description |
-|---|---|---|
-| A | All extracted triples | Full dataset before quality filtering |
-| B | Valid triples (invalid_triple = False) | After removing malformed/non-genuine triples |
-| C | Records with post-intervention response | Users who responded after the intervention |
-| D | Departures | Users who did not post again after the intervention |
+| Tier | Approx. N | Criteria | Analytical scope |
+|---|---|---|---|
+| A | ~8,000 | 5+ pre-intervention posts; 10+ post-intervention posts | Sustained behavior analysis; full outcome battery |
+| B | ~15,000 | 2+ pre-intervention posts; 3+ post-intervention posts | Immediate behavioral change; short-term trajectory |
+| C | ~40,000 | 1+ pre-intervention post; 1+ post-intervention post | Single-point Tier 1 prosociality scoring (core analysis) |
+| D | ~100,000 | 1+ pre-intervention post; no post-intervention posts | Outcome and retention analysis only |
 
-Tier D (departure analysis) is treated as an outcome measure — departure from the platform or conversation after an intervention is itself a behavioral signal. `src/analyze_tier_d.py` analyzes departure rates by platform, intervention type, and intervener role.
+Tier D records cannot support behavioral change measurement but carry analytical value: the absence of post-intervention activity may indicate the user left the platform following the intervention. `src/analyze_tier_d.py` analyzes departure rates by platform, intervention type, and intervener role.
+
+A hard filter requiring 5+ pre and 10+ post posts would retain only ~8,000 records and would systematically over-represent established, high-engagement users. The tiered design avoids this attrition bias.
 
 ---
 
