@@ -1,4 +1,4 @@
-record_id,platform,intervention_type,GD_conf_tier1,TL_conf_tier1,VT_conf_tier1,mean_conf_tier1_num,min_conf_tier1,cross_rater_composite_sd
+record_id,platform,intervention_type,R1_conf_tier1,R2_conf_tier1,R3_conf_tier1,mean_conf_tier1_num,min_conf_tier1,cross_rater_composite_sd
 di_447908,wikipedia,warning,low,medium,low,1.333,1,0.312
 di_444343,wikipedia,restriction,low,low,medium,1.333,1,0.53
 di_421535,wikipedia,positive_reinforcement,low,low,medium,1.333,1,0.68
