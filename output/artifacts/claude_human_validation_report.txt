@@ -3,8 +3,8 @@
   Prosocial Interventions in Online Moderation
 ==================================================================================
   Matched records:    293  (of 293 Claude, 340 human-annotated)
-  Claude scores:      C:\Users\tlins\Documents\_code\soc\human-validation\claude_scores_EMBARGOED.csv
-  Human consensus:    C:\Users\tlins\Documents\_code\soc\output\human_labels
+  Claude scores:      human-validation/claude_scores_EMBARGOED.csv
+  Human consensus:    output/human_labels
 
   Per-Dimension Agreement
   --------------------------------------------------------------------------------

@@ -2,8 +2,8 @@
   "n_matched": 293,
   "n_claude": 293,
   "n_human": 340,
-  "claude_path": "C:\\Users\\tlins\\Documents\\_code\\soc\\human-validation\\claude_scores_EMBARGOED.csv",
-  "human_source": "C:\\Users\\tlins\\Documents\\_code\\soc\\output\\human_labels",
+  "claude_path": "human-validation/claude_scores_EMBARGOED.csv",
+  "human_source": "output/human_labels",
   "dimensions": {
     "empathy": {
       "n": 293,
