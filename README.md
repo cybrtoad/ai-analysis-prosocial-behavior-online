@@ -124,12 +124,18 @@ python src/audit_phase2_scores.py
 python src/sensitivity_respect.py
 
 # 8. Thesis figures
-python scripts/create_thesis_figures.py
+python scripts/create_figures.py
 ```
 
 Full methodology and code-to-thesis mapping: **[docs/FOR_COMMITTEE.md](docs/FOR_COMMITTEE.md)**
 
 Data sources and download instructions: **[docs/DATA.md](docs/DATA.md)**
+
+---
+
+## AI Tools Disclosure
+
+This research uses two AI tools in distinct capacities. The Claude API (`claude-haiku-4-5-20251001`, Anthropic, 2025) was used as a computational instrument to score prosociality dimensions in approximately 100,000 Reddit, Stack Exchange, and Wikipedia records, and its outputs were validated against human annotations by three independent raters. Claude Code (Anthropic), an AI-assisted coding tool, was used to support development of analysis scripts. All code, analysis decisions, and conclusions are the author's own.
 
 ---
 
