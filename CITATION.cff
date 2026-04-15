@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+message: "If you use this code or methodology, please cite the thesis below."
+title: "Who Corrects and How: Large-Scale AI-Assisted Analysis of Communication Style and Prosocial Behavioral Response Across Peer, Expert, and Authority Contexts"
+authors:
+  - family-names: Linse
+    given-names: "Tamara T."
+license: MIT
+preferred-citation:
+  type: thesis
+  title: "Who Corrects and How: Large-Scale AI-Assisted Analysis of Communication Style and Prosocial Behavioral Response Across Peer, Expert, and Authority Contexts"
+  authors:
+    - family-names: Linse
+      given-names: "Tamara T."
+  institution:
+    name: "University of Wyoming"
+  department: "Department of Electrical Engineering and Computer Science"
+  thesis-type: "Master's Thesis"
+  year: 2026
+  month: 4
+  date-released: "2026-04-21"
+  location:
+    name: "Laramie, Wyoming, USA"
+  keywords:
+    - human-computer interaction
+    - human-centered computing
+    - computational social science
+    - large language models
+    - AI-assisted annotation
+    - prosociality classifier
+    - online discourse
+    - norm enforcement
+    - intervener role
+    - behavioral change
+    - multi-platform analysis
+    - Reddit
+    - Stack Exchange
+    - Wikipedia

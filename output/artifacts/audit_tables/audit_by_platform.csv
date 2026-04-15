@@ -1,0 +1,4 @@
+platform,total,malformed,malformed_pct,invalid_triple,invalid_triple_pct,valid,valid_pct
+reddit,4666,0,0.0%,6,0.1%,4660,99.9%
+stackexchange,90144,4,0.0%,68,0.1%,90072,99.9%
+wikipedia,5190,4,0.1%,420,8.1%,4766,91.8%

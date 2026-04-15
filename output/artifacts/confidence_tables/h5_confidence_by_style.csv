@@ -1,0 +1,12 @@
+intervention_style,n,mean_conf_style_num,pct_low
+educative,504,2.546,5.6%
+educative ,15,2.533,6.7%
+educative/suggestive,2,1.0,100.0%
+positive,34,2.235,26.5%
+punative,8,2.25,0.0%
+punitive,39,2.513,10.3%
+structural,23,1.739,34.8%
+suggestive,367,2.523,3.8%
+suggestive ,25,2.32,0.0%
+suggestive/educative,2,2.0,0.0%
+suggestivwe,1,2.0,0.0%

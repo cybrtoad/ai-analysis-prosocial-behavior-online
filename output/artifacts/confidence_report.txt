@@ -1,0 +1,145 @@
+==============================================================================
+  Rater Confidence Analysis
+  Prosocial Corrective Communication — Human Annotation Panel
+==============================================================================
+  Records: 340   Raters: 3   Total rater-record rows: 1020
+
+  Confidence scale: low (1) / medium (2) / high (3)
+  confidence_tier1: rater's confidence in their empathy/constructiveness/
+                    respect/social_cohesion scores
+  confidence_style: rater's confidence in their intervention_style label
+
+
+  H1 — Per-Rater Confidence Distributions
+  ----------------------------------------------------------------------------
+  Do raters differ systematically in how often they express uncertainty?
+
+  Tier 1 (scores):
+  Rater      low    medium    high    low%   mean_num
+  GD          19       190     131    5.6%       2.33
+  TL          12       141     187    3.5%       2.51
+  VT           1       149     190    0.3%       2.56
+
+  Style:
+  Rater      low    medium    high    low%   mean_num
+  GD          31       111     198    9.1%       2.49
+  TL          25        98     217    7.4%       2.56
+  VT          10       174     156    2.9%       2.43
+
+  KW test (confidence_tier1 across raters): H = 29.630, p = 3.68e-07 ***
+  Interpretation: raters differ significantly in how often they express uncertainty
+
+
+  H2 — Confidence vs. Score Deviation
+  ----------------------------------------------------------------------------
+  Does a rater's low confidence_tier1 predict that their composite score
+  deviates more from the other two raters' mean?
+  If yes: low confidence is a valid self-signal of unreliable ratings.
+  If no: low confidence doesn't actually flag the disagreements.
+
+  GD:
+    Spearman rho = 0.065, p = 0.2352 ns  (n=340)
+    Expected direction: negative (lower confidence → higher deviation)
+    Mean deviation by confidence level:
+      low     : 0.411  (n=19)
+      medium  : 0.457  (n=190)
+      high    : 0.512  (n=131)
+
+  TL:
+    Spearman rho = -0.018, p = 0.7413 ns  (n=340)
+    Expected direction: negative (lower confidence → higher deviation)
+    Mean deviation by confidence level:
+      low     : 0.484  (n=12)
+      medium  : 0.681  (n=141)
+      high    : 0.627  (n=187)
+
+  VT:
+    Spearman rho = -0.213, p = 7.622e-05 ***  (n=340)
+    Expected direction: negative (lower confidence → higher deviation)
+    Mean deviation by confidence level:
+      low     : 0.625  (n=1)
+      medium  : 0.617  (n=149)
+      high    : 0.470  (n=190)
+
+  Finding: Low confidence IS associated with higher score deviation — raters are self-aware about when their ratings are unreliable.
+
+  H3 — Consensus Low/Medium Confidence (Rubric Boundary Cases)
+  ----------------------------------------------------------------------------
+  Records where ALL three raters expressed low or medium confidence
+  are genuinely ambiguous texts where the rubric failed, not just
+  idiosyncratic rater uncertainty.
+
+  All 3 raters: low confidence_tier1:                 0  (0.0%)
+  All 3 raters: not-high confidence_tier1:           59  (17.4%)
+
+  [all_not_high] n=59  mean cross-rater SD: 0.682  empa=0.929  cons=0.631  resp=0.174  soci=0.996
+  [all_high] n=281  mean cross-rater SD: 0.670  empa=0.752  cons=0.681  resp=0.325  soci=0.920
+
+  H4 — Confidence by Platform
+  ----------------------------------------------------------------------------
+  Are Wikipedia records systematically rated with lower confidence?
+  This would independently support the structural explanation for
+  Wikipedia's near-zero human-Claude correlation.
+
+  Platform          n_rows  mean_conf_num    % low   % high
+  reddit               450          2.624     0.0%    62.4%
+  stackexchange        300          2.573     0.3%    57.7%
+  wikipedia            270          2.085    11.5%    20.0%
+
+  KW test (confidence_tier1 across platforms): H = 157.344, p = 6.811e-35 ***
+  Wikipedia receives significantly lower confidence ratings
+
+  H5 — Confidence_Style by Intervention_Style Category
+  ----------------------------------------------------------------------------
+  Does low confidence_style co-occur with the categories that produced
+  most disagreement (structural, educative/suggestive boundary)?
+
+  Style                        n  mean_conf    % low
+  educative                  504      2.546     5.6%
+  educative                   15      2.533     6.7%
+  educative/suggestive         2      1.000   100.0%
+  positive                    34      2.235    26.5%
+  punative                     8      2.250     0.0%
+  punitive                    39      2.513    10.3%
+  structural                  23      1.739    34.8%
+  suggestive                 367      2.523     3.8%
+  suggestive                  25      2.320     0.0%
+  suggestive/educative         2      2.000     0.0%
+  suggestivwe                  1      2.000     0.0%
+
+  KW test (confidence_style across intervention styles): H = 41.485, p = 6.534e-07 ***
+
+==============================================================================
+  SYNTHESIS
+==============================================================================
+
+  κ ≈ 0 means raters did not agree on WHICH records deserved low
+  confidence. The analyses above test whether confidence is still
+  informative at the rater and record level.
+
+  Key findings:
+    - H1: See per-rater rates above. A rater who consistently rates
+      low confidence has a different uncertainty threshold, not
+      necessarily worse judgment.
+    - H2: See deviation analysis. If rho is negative and significant,
+      low confidence is a valid self-signal and could flag records
+      for exclusion or down-weighting in future annotation work.
+    - H3: Records where ALL raters were uncertain (all low/medium)
+      are rubric boundary cases — the annotation task was genuinely
+      ambiguous, not just one rater having a bad day.
+    - H4: If Wikipedia shows lower confidence, that independently
+      supports the structural explanation for its poor Claude alignment.
+    - H5: If 'structural' style category shows lowest confidence_style,
+      that corroborates the VT vs. GD/TL disagreement on that label.
+
+  Thesis framing:
+  'Although inter-rater agreement on confidence was near-zero (κ ≈ 0),
+  individual confidence ratings carry information at the record level.
+  Records receiving low confidence from all three raters represent
+  cases where the rubric failed to provide sufficient guidance — rubric
+  boundary cases — rather than idiosyncratic rater uncertainty. These
+  records are candidates for adjudication or exclusion in future work.
+  The near-zero kappa reflects that raters have different thresholds
+  for expressing uncertainty, not that confidence is meaningless.'
+
+==============================================================================

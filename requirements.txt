@@ -1,0 +1,24 @@
+# Core data processing
+pandas>=2.2
+pyarrow>=17.0
+numpy>=2.0
+
+# NLP / ML
+transformers>=4.44
+torch>=2.4
+
+# Wikipedia wikitext parsing
+mwparserfromhell>=0.6
+
+# HTML parsing (StackExchange body fields)
+beautifulsoup4>=4.12
+lxml>=5.2
+
+# Anthropic API
+anthropic>=0.34
+
+# Environment / config
+python-dotenv>=1.0
+
+# Progress bars and utilities
+tqdm>=4.66

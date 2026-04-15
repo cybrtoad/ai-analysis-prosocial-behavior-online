@@ -1,0 +1,5 @@
+intervener_role,intervention_type,mean_composite,std_composite,n
+formal_authority,restriction,2.441,1.302,1439
+formal_authority,warning,1.958,1.22,2102
+peer_editor,positive_reinforcement,3.257,1.269,756
+peer_editor,reframe,2.459,1.266,473

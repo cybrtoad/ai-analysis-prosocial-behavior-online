@@ -1,0 +1,7 @@
+group_a,group_b,n_a,n_b,median_a,median_b,U,p_raw,p_bonf,significant
+positive_reinforcement,reframe,756,473,3.5,2.125,240936.0,0.0,0.0,True
+positive_reinforcement,restriction,756,1439,3.5,2.0,733795.5,0.0,0.0,True
+positive_reinforcement,warning,756,2102,3.5,1.375,1222065.0,0.0,0.0,True
+reframe,restriction,473,1439,2.125,2.0,344144.0,0.711819,1.0,False
+reframe,warning,473,2102,2.125,1.375,625550.5,0.0,0.0,True
+restriction,warning,1439,2102,2.0,1.375,1882158.5,0.0,0.0,True

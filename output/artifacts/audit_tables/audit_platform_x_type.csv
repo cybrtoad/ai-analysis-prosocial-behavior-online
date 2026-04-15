@@ -1,0 +1,8 @@
+platform,intervention_type,valid_n
+reddit,positive_reinforcement,2246
+reddit,reframe,2414
+stackexchange,reframe,90072
+wikipedia,positive_reinforcement,755
+wikipedia,reframe,473
+wikipedia,restriction,1437
+wikipedia,warning,2101

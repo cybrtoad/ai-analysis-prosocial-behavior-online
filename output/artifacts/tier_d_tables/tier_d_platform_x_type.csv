@@ -1,0 +1,8 @@
+platform,intervention_type,total,tier_d,tiers_ac,departure_rate_pct
+reddit,positive_reinforcement,9459,81,9378,0.9
+reddit,reframe,10149,107,10042,1.1
+stackexchange,reframe,375821,15558,360263,4.1
+wikipedia,positive_reinforcement,3834,422,3412,11.0
+wikipedia,reframe,2600,154,2446,5.9
+wikipedia,restriction,7420,819,6601,11.0
+wikipedia,warning,14389,5290,9099,36.8

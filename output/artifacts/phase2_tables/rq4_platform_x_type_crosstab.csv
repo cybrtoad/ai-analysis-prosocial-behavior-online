@@ -1,0 +1,4 @@
+platform,intervention_type,mean_composite,std_composite,n
+reddit,positive_reinforcement,2.689,0.951,2246
+reddit,reframe,2.612,0.934,2414
+stackexchange,reframe,3.427,0.891,90076

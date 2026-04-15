@@ -1,0 +1,125 @@
+==============================================================================
+  Sensitivity Analysis: Respect Ceiling  —  Reddit + StackExchange (main)
+==============================================================================
+  n = 94,736
+
+  Composites:
+    4-dim (baseline):    mean(empathy, constructiveness, respect, social_cohesion)
+    3-dim (sensitivity): mean(empathy, constructiveness, social_cohesion)
+
+  Respect ceiling effect:
+    37.3% of records at 5.0 (ceiling)
+
+  Overall composite shift:
+    4-dim  mean=3.389  sd=0.910
+    3-dim  mean=3.129  sd=0.962  Δmean=-0.260
+
+  ----------------------------------------------------------------------------
+  RQ1 — Intervention type × composite
+  ----------------------------------------------------------------------------
+  KW test
+    4-dim  H=1148.256  p=1.074e-251  eta2=0.0121  (small)
+    3-dim  H=752.005  p=1.47e-165  eta2=0.0079  (negligible)
+    NOTE: effect label changes (small → negligible)
+
+  Medians by intervention type:
+    positive_reinforcement     4-dim median=2.500  3-dim median=2.333  Δ=-0.167
+    reframe                    4-dim median=3.500  3-dim median=3.167  Δ=-0.333
+
+  ----------------------------------------------------------------------------
+  RQ2b — Intervener role × composite
+  ----------------------------------------------------------------------------
+  KW test
+    4-dim  H=2720.928  p=0  eta2=0.0287  (small)
+    3-dim  H=1836.186  p=0  eta2=0.0194  (small)
+    Conclusion unchanged.
+
+  Medians by intervener role:
+    domain_expert              4-dim median=3.500  3-dim median=3.333  Δ=-0.167
+    peer                       4-dim median=2.500  3-dim median=2.333  Δ=-0.167
+
+  ----------------------------------------------------------------------------
+  RQ4 — Platform × composite
+  ----------------------------------------------------------------------------
+  KW test
+    4-dim  H=2720.928  p=0  eta2=0.0287  (small)
+    3-dim  H=1836.186  p=0  eta2=0.0194  (small)
+    Conclusion unchanged.
+
+  Medians by platform:
+    reddit                     4-dim median=2.500  3-dim median=2.333  Δ=-0.167
+    stackexchange              4-dim median=3.500  3-dim median=3.333  Δ=-0.167
+
+  ----------------------------------------------------------------------------
+  RQ3 — Response time × composite (Spearman)
+  ----------------------------------------------------------------------------
+  Spearman rho
+    4-dim  rho=0.0311  p=9.555e-22  n=94,736
+    3-dim  rho=0.0240  p=1.53e-13  n=94,736
+    Conclusion unchanged.
+
+  ============================================================================
+  VERDICT
+  ============================================================================
+  Review the 'Conclusion unchanged.' / 'NOTE' / '*** SIGNIFICANCE CHANGES ***'
+  lines above. If all key comparisons read 'Conclusion unchanged.', the respect
+  ceiling does not affect the substantive findings.
+==============================================================================
+
+==============================================================================
+  Sensitivity Analysis: Respect Ceiling  —  Wikipedia (exploratory)
+==============================================================================
+  n = 4,770
+
+  Composites:
+    4-dim (baseline):    mean(empathy, constructiveness, respect, social_cohesion)
+    3-dim (sensitivity): mean(empathy, constructiveness, social_cohesion)
+
+  Respect ceiling effect:
+    20.8% of records at 5.0 (ceiling)
+
+  Overall composite shift:
+    4-dim  mean=2.359  sd=1.335
+    3-dim  mean=2.180  sd=1.300  Δmean=-0.179
+
+  ----------------------------------------------------------------------------
+  RQ1 — Intervention type × composite
+  ----------------------------------------------------------------------------
+  KW test
+    4-dim  H=571.838  p=1.283e-123  eta2=0.1194  (medium)
+    3-dim  H=538.909  p=1.761e-116  eta2=0.1124  (medium)
+    Conclusion unchanged.
+
+  Medians by intervention type:
+    positive_reinforcement     4-dim median=3.500  3-dim median=3.333  Δ=-0.167
+    reframe                    4-dim median=2.125  3-dim median=1.833  Δ=-0.292
+    restriction                4-dim median=2.000  3-dim median=1.667  Δ=-0.333
+    warning                    4-dim median=1.375  3-dim median=1.167  Δ=-0.208
+
+  ----------------------------------------------------------------------------
+  RQ2b — Intervener role × composite
+  ----------------------------------------------------------------------------
+  KW test
+    4-dim  H=335.309  p=6.707e-75  eta2=0.0701  (medium)
+    3-dim  H=327.237  p=3.843e-73  eta2=0.0684  (medium)
+    Conclusion unchanged.
+
+  Medians by intervener role:
+    formal_authority           4-dim median=1.750  3-dim median=1.333  Δ=-0.417
+    peer_editor                4-dim median=3.250  3-dim median=3.000  Δ=-0.250
+
+  ----------------------------------------------------------------------------
+  RQ3 — Response time × composite (Spearman)
+  ----------------------------------------------------------------------------
+  Spearman rho
+    4-dim  rho=0.1487  p=5.293e-25  n=4,770
+    3-dim  rho=0.1390  p=5.164e-22  n=4,770
+    Conclusion unchanged.
+
+  ============================================================================
+  VERDICT
+  ============================================================================
+  Review the 'Conclusion unchanged.' / 'NOTE' / '*** SIGNIFICANCE CHANGES ***'
+  lines above. If all key comparisons read 'Conclusion unchanged.', the respect
+  ceiling does not affect the substantive findings.
+==============================================================================

@@ -1,0 +1,4 @@
+response_time_category,n,prosociality_composite_mean,prosociality_composite_std,empathy_mean,empathy_std,constructiveness_mean,constructiveness_std,respect_mean,respect_std,social_cohesion_mean,social_cohesion_std
+delayed,948,2.41,1.31,1.938,1.313,2.586,1.407,2.995,1.562,2.12,1.367
+immediate,1879,2.167,1.337,1.836,1.266,2.277,1.417,2.585,1.618,1.971,1.344
+same_day,1943,2.52,1.322,2.012,1.349,2.691,1.413,3.15,1.55,2.227,1.402

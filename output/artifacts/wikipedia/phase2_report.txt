@@ -1,0 +1,72 @@
+==============================================================================
+  Phase 2 Pattern Analysis Report
+  Prosocial Corrective Communication in Online Communities
+==============================================================================
+  Records analyzed:  4,770
+  Platforms:         wikipedia
+  Intervention types:positive_reinforcement, reframe, restriction, warning
+  Intervener roles:  formal_authority, peer_editor
+  Date range:        2003-12-20 18:55:25+00:00 — 2025-11-30 20:00:28+00:00
+
+  NOTE: All findings are associations, not causal claims.  Selection bias
+  and survivorship bias apply (see PROCESS.md Part 10.2 for framing guidance).
+
+  Prosociality Composite — Platform Means
+  ----------------------------------------------------------------------------
+  wikipedia        n= 4,770  mean=2.359  sd=1.335  median=1.875
+
+  RQ1 — Intervention Type × Prosociality Composite
+  ----------------------------------------------------------------------------
+  Kruskal-Wallis: H(3) = 571.838,  p = 0 ***,  eta2 = 0.119 (medium)
+
+  Type                            n   Median     Mean      SD
+  ----------------------------------------------------------------------------
+  positive_reinforcement        756    3.500    3.257   1.269
+  reframe                       473    2.125    2.459   1.266
+  restriction                 1,439    2.000    2.441   1.302
+  warning                     2,102    1.375    1.958   1.220
+
+  RQ2b -- Intervener Role x Prosociality Composite
+  ----------------------------------------------------------------------------
+  Kruskal-Wallis: H(1) = 335.309,  p = 0 ***,  eta2 = 0.070 (medium)
+
+  Role                       n   Median     Mean      SD
+  ----------------------------------------------------------------------------
+  formal_authority       3,541    1.750    2.154   1.276
+  peer_editor            1,229    3.250    2.950   1.326
+
+  RQ4 — Platform Comparison
+  ----------------------------------------------------------------------------
+  Skipped: fewer than 2 groups with n >= 3
+
+  Platform              n   Median     Mean      SD
+  ----------------------------------------------------------------------------
+  wikipedia         4,770    1.875    2.359   1.335
+
+  RQ3 — Response Time × Prosociality
+  ----------------------------------------------------------------------------
+  Spearman rho = 0.149,  p = 0 ***,  n = 4,770
+
+  RQ5 — Dimension Structure
+  ----------------------------------------------------------------------------
+  PCA explained variance: PC1=87.3%  PC2=9.6%  PC3=2.0%  PC4=1.1%
+  WARNING: PC1 > 70% — dimensions largely collapse to a single factor.
+           Use prosociality_composite as primary outcome in analysis.
+
+  Pearson correlations among Tier 1 dimensions:
+                         empathy  construc   respect  social_c
+  empathy                  1.000     0.748     0.708     0.931
+  constructiveness         0.748     1.000     0.924     0.862
+  respect                  0.708     0.924     1.000     0.809
+  social_cohesion          0.931     0.862     0.809     1.000
+
+  Analyses Pending Additional Data
+  ----------------------------------------------------------------------------
+  - intervention_style × prosociality (requires extending human annotation to ~100K)
+  - user_retention_7day / user_retention_30day (requires full activity timeline)
+  - immediate_behavioral_change / sustained_behavior_score
+    (requires multiple post-intervention texts per user)
+  - user_account_age_days (requires account creation date from raw platform data)
+  - pre/post toxicity scores (requires detoxify or Perspective API)
+
+==============================================================================

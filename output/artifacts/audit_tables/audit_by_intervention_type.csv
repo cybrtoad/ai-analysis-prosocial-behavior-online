@@ -1,0 +1,5 @@
+intervention_type,total,malformed,malformed_pct,invalid_triple,invalid_triple_pct,valid,valid_pct
+positive_reinforcement,3070,1,0.0%,68,2.2%,3001,97.8%
+reframe,93094,4,0.0%,131,0.1%,92959,99.9%
+restriction,1610,2,0.1%,171,10.6%,1437,89.3%
+warning,2226,1,0.0%,124,5.6%,2101,94.4%

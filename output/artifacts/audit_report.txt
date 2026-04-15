@@ -1,0 +1,83 @@
+==============================================================================
+  Phase 2 Claude Scores — Data Quality Audit
+==============================================================================
+
+  Total records in scores file         100,000
+  Malformed (score = -1)                     8  (0.0%)
+  Invalid triple (non-malformed)           494  (0.5%)
+  Valid, scoreable records              99,498  (99.5%)
+
+  ----------------------------------------------------------------------------
+  By Platform
+  ----------------------------------------------------------------------------
+  reddit           total=  4,666  malformed=    0 (0.0%)  invalid=    6 (0.1%)  valid=  4,660 (99.9%)
+  stackexchange    total= 90,144  malformed=    4 (0.0%)  invalid=   68 (0.1%)  valid= 90,072 (99.9%)
+  wikipedia        total=  5,190  malformed=    4 (0.1%)  invalid=  420 (8.1%)  valid=  4,766 (91.8%)
+
+  ----------------------------------------------------------------------------
+  By Intervention Type
+  ----------------------------------------------------------------------------
+  positive_reinforcement          total=  3,070  malformed=    1 (0.0%)  valid=  3,001 (97.8%)
+  reframe                         total= 93,094  malformed=    4 (0.0%)  valid= 92,959 (99.9%)
+  restriction                     total=  1,610  malformed=    2 (0.1%)  valid=  1,437 (89.3%)
+  warning                         total=  2,226  malformed=    1 (0.0%)  valid=  2,101 (94.4%)
+
+  ----------------------------------------------------------------------------
+  Platform × Intervention Type (valid record counts)
+  ----------------------------------------------------------------------------
+     platform      intervention_type  valid_n
+       reddit positive_reinforcement     2246
+       reddit                reframe     2414
+stackexchange                reframe    90072
+    wikipedia positive_reinforcement      755
+    wikipedia                reframe      473
+    wikipedia            restriction     1437
+    wikipedia                warning     2101
+
+  ----------------------------------------------------------------------------
+  Score Distributions — Valid Records (all platforms)
+  ----------------------------------------------------------------------------
+  Dimension                     n    mean      sd  p05  p10  p25  p50  p75  p90  p95  {'floor%':>7s}  {'ceil%':>6s}
+  empathy                  99,498   2.990   1.018   1.50   2.00   2.00   3.00   4.00   4.50   4.50      4.3     1.6
+  constructiveness         99,498   2.999   1.035   1.50   1.50   2.00   3.00   4.00   4.50   4.50      4.3     2.0
+  respect                  99,498   4.107   0.954   2.00   3.00   3.50   4.50   5.00   5.00   5.00      1.8    36.5
+  social_cohesion          99,498   3.261   1.094   1.50   2.00   2.50   3.50   4.50   4.50   5.00      4.3     5.7
+
+  ----------------------------------------------------------------------------
+  Score Distributions — Prosociality Composite by Platform
+  ----------------------------------------------------------------------------
+  reddit           n=  4,660  mean=2.649  sd=0.943  p25=2.00  p50=2.50  p75=3.38  floor=2.1%  ceil=0.1%
+  stackexchange    n= 90,072  mean=3.427  sd=0.891  p25=2.62  p50=3.50  p75=4.25  floor=0.1%  ceil=0.8%
+  wikipedia        n=  4,766  mean=2.362  sd=1.332  p25=1.00  p50=1.88  p75=3.50  floor=31.3%  ceil=6.2%
+
+  ----------------------------------------------------------------------------
+  Confidence Distribution (valid records)
+  ----------------------------------------------------------------------------
+  n=99,493  mean=0.805  sd=0.076  pp5=0.72  pp10=0.72  pp25=0.75  pp50=0.78  pp75=0.85  pp90=0.92  pp95=0.95
+
+         <0.50       12  0.0%
+     0.50–0.69      455  0.5%
+     0.70–0.89   81,400  81.8%
+     0.90–1.00   17,626  17.7%
+
+
+  ----------------------------------------------------------------------------
+  Floor / Ceiling Effects per Dimension
+  ----------------------------------------------------------------------------
+  Dimension                        n    % at 1.0 (floor)   % at 5.0 (ceil)
+  empathy                     99,498                 4.3               1.6
+  constructiveness            99,498                 4.3               2.0
+  respect                     99,498                 1.8              36.5
+  social_cohesion             99,498                 4.3               5.7
+
+==============================================================================
+  Go / No-Go Assessment
+==============================================================================
+  STATUS: OK — proceed to build_phase2_features.py
+
+  Next steps:
+    1. Review warnings above (if any)
+    2. python src/build_phase2_features.py
+    3. python src/analyze_phase2.py
+
+==============================================================================

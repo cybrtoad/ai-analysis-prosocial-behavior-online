@@ -1,0 +1,30 @@
+# Secrets
+.env
+
+# Virtual environment
+.venv/
+
+# Data files — too large for git (see README for download instructions)
+data/
+
+# Large intermediate outputs
+output/raw/
+output/processed/
+output/splits/
+output/labels/
+output/human_labels/
+output/chats/
+output/phase2/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/

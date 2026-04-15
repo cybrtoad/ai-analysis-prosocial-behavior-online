@@ -1,0 +1,400 @@
+{
+  "rq1": {
+    "kw_composite": {
+      "k": 4,
+      "n": 4770,
+      "H": 571.8378,
+      "p": 0.0,
+      "eta2": 0.1194,
+      "effect": "medium",
+      "group_n": {
+        "positive_reinforcement": 756,
+        "reframe": 473,
+        "restriction": 1439,
+        "warning": 2102
+      }
+    },
+    "kw_per_dimension": {
+      "empathy": {
+        "k": 4,
+        "n": 4770,
+        "H": 498.958,
+        "p": 0.0,
+        "eta2": 0.1041,
+        "effect": "medium",
+        "group_n": {
+          "positive_reinforcement": 756,
+          "reframe": 473,
+          "restriction": 1439,
+          "warning": 2102
+        }
+      },
+      "constructiveness": {
+        "k": 4,
+        "n": 4770,
+        "H": 434.9226,
+        "p": 0.0,
+        "eta2": 0.0906,
+        "effect": "medium",
+        "group_n": {
+          "positive_reinforcement": 756,
+          "reframe": 473,
+          "restriction": 1439,
+          "warning": 2102
+        }
+      },
+      "respect": {
+        "k": 4,
+        "n": 4770,
+        "H": 523.7627,
+        "p": 0.0,
+        "eta2": 0.1093,
+        "effect": "medium",
+        "group_n": {
+          "positive_reinforcement": 756,
+          "reframe": 473,
+          "restriction": 1439,
+          "warning": 2102
+        }
+      },
+      "social_cohesion": {
+        "k": 4,
+        "n": 4770,
+        "H": 532.5019,
+        "p": 0.0,
+        "eta2": 0.1111,
+        "effect": "medium",
+        "group_n": {
+          "positive_reinforcement": 756,
+          "reframe": 473,
+          "restriction": 1439,
+          "warning": 2102
+        }
+      }
+    },
+    "group_medians": {
+      "positive_reinforcement": 3.5,
+      "reframe": 2.125,
+      "restriction": 2.0,
+      "warning": 1.375
+    }
+  },
+  "rq2": {
+    "spearman_prior_interventions_x_composite": {
+      "n": 4770,
+      "rho": 0.1385,
+      "p": 0.0
+    },
+    "spearman_per_dimension": {
+      "empathy": {
+        "n": 4770,
+        "rho": -0.0299,
+        "p": 0.038769
+      },
+      "constructiveness": {
+        "n": 4770,
+        "rho": 0.1626,
+        "p": 0.0
+      },
+      "respect": {
+        "n": 4770,
+        "rho": 0.1889,
+        "p": 0.0
+      },
+      "social_cohesion": {
+        "n": 4770,
+        "rho": 0.0503,
+        "p": 0.000504
+      }
+    },
+    "kw_tenure_category": {
+      "k": 3,
+      "n": 4770,
+      "H": 267.8042,
+      "p": 0.0,
+      "eta2": 0.0558,
+      "effect": "small",
+      "group_n": {
+        "newcomer": 1811,
+        "regular": 611,
+        "veteran": 2348
+      }
+    },
+    "tenure_posthoc": [
+      {
+        "group_a": "newcomer",
+        "group_b": "regular",
+        "n_a": 1811,
+        "n_b": 611,
+        "median_a": 1.125,
+        "median_b": 2.25,
+        "U": 393403.0,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      },
+      {
+        "group_a": "newcomer",
+        "group_b": "veteran",
+        "n_a": 1811,
+        "n_b": 2348,
+        "median_a": 1.125,
+        "median_b": 2.375,
+        "U": 1542784.5,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      },
+      {
+        "group_a": "regular",
+        "group_b": "veteran",
+        "n_a": 611,
+        "n_b": 2348,
+        "median_a": 2.25,
+        "median_b": 2.375,
+        "U": 722229.0,
+        "p_raw": 0.792827,
+        "p_bonf": 1.0,
+        "significant": false
+      }
+    ],
+    "tenure_group_medians": {
+      "newcomer": 1.125,
+      "regular": 2.25,
+      "veteran": 2.375
+    },
+    "note": "user_prior_interventions_in_sample is an in-sample proxy.  True user_previous_interventions requires full platform activity data."
+  },
+  "rq2b": {
+    "kw_composite": {
+      "k": 2,
+      "n": 4770,
+      "H": 335.3089,
+      "p": 0.0,
+      "eta2": 0.0701,
+      "effect": "medium",
+      "group_n": {
+        "formal_authority": 3541,
+        "peer_editor": 1229
+      }
+    },
+    "kw_per_dimension": {
+      "empathy": {
+        "k": 2,
+        "n": 4770,
+        "H": 351.8011,
+        "p": 0.0,
+        "eta2": 0.0736,
+        "effect": "medium",
+        "group_n": {
+          "formal_authority": 3541,
+          "peer_editor": 1229
+        }
+      },
+      "constructiveness": {
+        "k": 2,
+        "n": 4770,
+        "H": 225.8832,
+        "p": 0.0,
+        "eta2": 0.0472,
+        "effect": "small",
+        "group_n": {
+          "formal_authority": 3541,
+          "peer_editor": 1229
+        }
+      },
+      "respect": {
+        "k": 2,
+        "n": 4770,
+        "H": 280.9748,
+        "p": 0.0,
+        "eta2": 0.0587,
+        "effect": "small",
+        "group_n": {
+          "formal_authority": 3541,
+          "peer_editor": 1229
+        }
+      },
+      "social_cohesion": {
+        "k": 2,
+        "n": 4770,
+        "H": 340.791,
+        "p": 0.0,
+        "eta2": 0.0713,
+        "effect": "medium",
+        "group_n": {
+          "formal_authority": 3541,
+          "peer_editor": 1229
+        }
+      }
+    },
+    "posthoc": [
+      {
+        "group_a": "formal_authority",
+        "group_b": "peer_editor",
+        "n_a": 3541,
+        "n_b": 1229,
+        "median_a": 1.75,
+        "median_b": 3.25,
+        "U": 1426334.0,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      }
+    ],
+    "group_medians": {
+      "formal_authority": 1.75,
+      "peer_editor": 3.25
+    }
+  },
+  "rq3": {
+    "spearman_response_time_minutes_x_composite": {
+      "n": 4770,
+      "rho": 0.1487,
+      "p": 0.0
+    },
+    "kw_response_time_category": {
+      "k": 3,
+      "n": 4770,
+      "H": 97.1424,
+      "p": 0.0,
+      "eta2": 0.02,
+      "effect": "small",
+      "group_n": {
+        "delayed": 948,
+        "immediate": 1879,
+        "same_day": 1943
+      }
+    },
+    "group_medians": {
+      "delayed": 2.0,
+      "immediate": 1.625,
+      "same_day": 2.25
+    },
+    "posthoc": [
+      {
+        "group_a": "delayed",
+        "group_b": "immediate",
+        "n_a": 948,
+        "n_b": 1879,
+        "median_a": 2.0,
+        "median_b": 1.625,
+        "U": 1007151.5,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      },
+      {
+        "group_a": "delayed",
+        "group_b": "same_day",
+        "n_a": 948,
+        "n_b": 1943,
+        "median_a": 2.0,
+        "median_b": 2.25,
+        "U": 874688.0,
+        "p_raw": 0.026744,
+        "p_bonf": 0.080233,
+        "significant": false
+      },
+      {
+        "group_a": "immediate",
+        "group_b": "same_day",
+        "n_a": 1879,
+        "n_b": 1943,
+        "median_a": 1.625,
+        "median_b": 2.25,
+        "U": 1502163.5,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      }
+    ]
+  },
+  "rq4": {
+    "kw_composite": {
+      "error": "fewer than 2 groups with n >= 3"
+    },
+    "kw_per_dimension": {
+      "empathy": {
+        "error": "fewer than 2 groups with n >= 3"
+      },
+      "constructiveness": {
+        "error": "fewer than 2 groups with n >= 3"
+      },
+      "respect": {
+        "error": "fewer than 2 groups with n >= 3"
+      },
+      "social_cohesion": {
+        "error": "fewer than 2 groups with n >= 3"
+      }
+    },
+    "posthoc": [],
+    "group_medians": {
+      "wikipedia": 1.875
+    }
+  },
+  "rq5": {
+    "n": 4770,
+    "correlation_matrix": {
+      "empathy": {
+        "empathy": 1.0,
+        "constructiveness": 0.7483,
+        "respect": 0.7084,
+        "social_cohesion": 0.9315
+      },
+      "constructiveness": {
+        "empathy": 0.7483,
+        "constructiveness": 1.0,
+        "respect": 0.9241,
+        "social_cohesion": 0.862
+      },
+      "respect": {
+        "empathy": 0.7084,
+        "constructiveness": 0.9241,
+        "respect": 1.0,
+        "social_cohesion": 0.8088
+      },
+      "social_cohesion": {
+        "empathy": 0.9315,
+        "constructiveness": 0.862,
+        "respect": 0.8088,
+        "social_cohesion": 1.0
+      }
+    },
+    "pca_available": true,
+    "pca_explained_variance": [
+      0.8734,
+      0.0963,
+      0.0196,
+      0.0107
+    ],
+    "pca_single_factor_flag": true,
+    "pca_loadings": {
+      "PC1": {
+        "empathy": 0.4846,
+        "constructiveness": 0.5063,
+        "respect": 0.4926,
+        "social_cohesion": 0.5159
+      },
+      "PC2": {
+        "empathy": 0.6475,
+        "constructiveness": -0.4129,
+        "respect": -0.5522,
+        "social_cohesion": 0.3244
+      },
+      "PC3": {
+        "empathy": 0.3013,
+        "constructiveness": -0.6302,
+        "respect": 0.6545,
+        "social_cohesion": -0.2895
+      },
+      "PC4": {
+        "empathy": -0.5051,
+        "constructiveness": -0.4195,
+        "respect": 0.155,
+        "social_cohesion": 0.7382
+      }
+    },
+    "note": "High inter-dimension correlations (0.79-0.95) were observed in Phase 1. If PC1 > 70%, report prosociality_composite as the primary outcome and subscores as secondary descriptive findings."
+  }
+}

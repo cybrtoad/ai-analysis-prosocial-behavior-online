@@ -1,0 +1,447 @@
+{
+  "rq1": {
+    "kw_composite": {
+      "k": 2,
+      "n": 94736,
+      "H": 1148.256,
+      "p": 0.0,
+      "eta2": 0.0121,
+      "effect": "small",
+      "group_n": {
+        "positive_reinforcement": 2246,
+        "reframe": 92490
+      }
+    },
+    "kw_per_dimension": {
+      "empathy": {
+        "k": 2,
+        "n": 94736,
+        "H": 549.4995,
+        "p": 0.0,
+        "eta2": 0.0058,
+        "effect": "negligible",
+        "group_n": {
+          "positive_reinforcement": 2246,
+          "reframe": 92490
+        }
+      },
+      "constructiveness": {
+        "k": 2,
+        "n": 94736,
+        "H": 205.138,
+        "p": 0.0,
+        "eta2": 0.0022,
+        "effect": "negligible",
+        "group_n": {
+          "positive_reinforcement": 2246,
+          "reframe": 92490
+        }
+      },
+      "respect": {
+        "k": 2,
+        "n": 94736,
+        "H": 2381.501,
+        "p": 0.0,
+        "eta2": 0.0251,
+        "effect": "small",
+        "group_n": {
+          "positive_reinforcement": 2246,
+          "reframe": 92490
+        }
+      },
+      "social_cohesion": {
+        "k": 2,
+        "n": 94736,
+        "H": 1467.786,
+        "p": 0.0,
+        "eta2": 0.0155,
+        "effect": "small",
+        "group_n": {
+          "positive_reinforcement": 2246,
+          "reframe": 92490
+        }
+      }
+    },
+    "group_medians": {
+      "positive_reinforcement": 2.5,
+      "reframe": 3.5
+    }
+  },
+  "rq2": {
+    "spearman_prior_interventions_x_composite": {
+      "n": 94736,
+      "rho": -0.0459,
+      "p": 0.0
+    },
+    "spearman_per_dimension": {
+      "empathy": {
+        "n": 94736,
+        "rho": -0.0539,
+        "p": 0.0
+      },
+      "constructiveness": {
+        "n": 94736,
+        "rho": 0.0111,
+        "p": 0.000656
+      },
+      "respect": {
+        "n": 94736,
+        "rho": -0.0817,
+        "p": 0.0
+      },
+      "social_cohesion": {
+        "n": 94736,
+        "rho": -0.0565,
+        "p": 0.0
+      }
+    },
+    "kw_tenure_category": {
+      "k": 3,
+      "n": 94736,
+      "H": 106.1173,
+      "p": 0.0,
+      "eta2": 0.0011,
+      "effect": "negligible",
+      "group_n": {
+        "newcomer": 47454,
+        "regular": 9319,
+        "veteran": 37963
+      }
+    },
+    "tenure_posthoc": [
+      {
+        "group_a": "newcomer",
+        "group_b": "regular",
+        "n_a": 47454,
+        "n_b": 9319,
+        "median_a": 3.5,
+        "median_b": 3.375,
+        "U": 234519831.5,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      },
+      {
+        "group_a": "newcomer",
+        "group_b": "veteran",
+        "n_a": 47454,
+        "n_b": 37963,
+        "median_a": 3.5,
+        "median_b": 3.5,
+        "U": 925300218.0,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      },
+      {
+        "group_a": "regular",
+        "group_b": "veteran",
+        "n_a": 9319,
+        "n_b": 37963,
+        "median_a": 3.375,
+        "median_b": 3.5,
+        "U": 171095679.5,
+        "p_raw": 1e-06,
+        "p_bonf": 3e-06,
+        "significant": true
+      }
+    ],
+    "tenure_group_medians": {
+      "newcomer": 3.5,
+      "regular": 3.375,
+      "veteran": 3.5
+    },
+    "note": "user_prior_interventions_in_sample is an in-sample proxy.  True user_previous_interventions requires full platform activity data."
+  },
+  "rq2b": {
+    "kw_composite": {
+      "k": 2,
+      "n": 94736,
+      "H": 2720.9283,
+      "p": 0.0,
+      "eta2": 0.0287,
+      "effect": "small",
+      "group_n": {
+        "domain_expert": 90076,
+        "peer": 4660
+      }
+    },
+    "kw_per_dimension": {
+      "empathy": {
+        "k": 2,
+        "n": 94736,
+        "H": 1340.9792,
+        "p": 0.0,
+        "eta2": 0.0141,
+        "effect": "small",
+        "group_n": {
+          "domain_expert": 90076,
+          "peer": 4660
+        }
+      },
+      "constructiveness": {
+        "k": 2,
+        "n": 94736,
+        "H": 519.2008,
+        "p": 0.0,
+        "eta2": 0.0055,
+        "effect": "negligible",
+        "group_n": {
+          "domain_expert": 90076,
+          "peer": 4660
+        }
+      },
+      "respect": {
+        "k": 2,
+        "n": 94736,
+        "H": 5358.5867,
+        "p": 0.0,
+        "eta2": 0.0566,
+        "effect": "small",
+        "group_n": {
+          "domain_expert": 90076,
+          "peer": 4660
+        }
+      },
+      "social_cohesion": {
+        "k": 2,
+        "n": 94736,
+        "H": 3535.9082,
+        "p": 0.0,
+        "eta2": 0.0373,
+        "effect": "small",
+        "group_n": {
+          "domain_expert": 90076,
+          "peer": 4660
+        }
+      }
+    },
+    "posthoc": [
+      {
+        "group_a": "domain_expert",
+        "group_b": "peer",
+        "n_a": 90076,
+        "n_b": 4660,
+        "median_a": 3.5,
+        "median_b": 2.5,
+        "U": 304731728.0,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      }
+    ],
+    "group_medians": {
+      "domain_expert": 3.5,
+      "peer": 2.5
+    }
+  },
+  "rq3": {
+    "spearman_response_time_minutes_x_composite": {
+      "n": 94736,
+      "rho": 0.0311,
+      "p": 0.0
+    },
+    "kw_response_time_category": {
+      "k": 3,
+      "n": 94736,
+      "H": 152.9696,
+      "p": 0.0,
+      "eta2": 0.0016,
+      "effect": "negligible",
+      "group_n": {
+        "delayed": 14212,
+        "immediate": 47794,
+        "same_day": 32730
+      }
+    },
+    "group_medians": {
+      "delayed": 3.375,
+      "immediate": 3.5,
+      "same_day": 3.5
+    },
+    "posthoc": [
+      {
+        "group_a": "delayed",
+        "group_b": "immediate",
+        "n_a": 14212,
+        "n_b": 47794,
+        "median_a": 3.375,
+        "median_b": 3.5,
+        "U": 339997005.5,
+        "p_raw": 0.842091,
+        "p_bonf": 1.0,
+        "significant": false
+      },
+      {
+        "group_a": "delayed",
+        "group_b": "same_day",
+        "n_a": 14212,
+        "n_b": 32730,
+        "median_a": 3.375,
+        "median_b": 3.5,
+        "U": 221760026.5,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      },
+      {
+        "group_a": "immediate",
+        "group_b": "same_day",
+        "n_a": 47794,
+        "n_b": 32730,
+        "median_a": 3.5,
+        "median_b": 3.5,
+        "U": 743530374.5,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      }
+    ]
+  },
+  "rq4": {
+    "kw_composite": {
+      "k": 2,
+      "n": 94736,
+      "H": 2720.9283,
+      "p": 0.0,
+      "eta2": 0.0287,
+      "effect": "small",
+      "group_n": {
+        "reddit": 4660,
+        "stackexchange": 90076
+      }
+    },
+    "kw_per_dimension": {
+      "empathy": {
+        "k": 2,
+        "n": 94736,
+        "H": 1340.9792,
+        "p": 0.0,
+        "eta2": 0.0141,
+        "effect": "small",
+        "group_n": {
+          "reddit": 4660,
+          "stackexchange": 90076
+        }
+      },
+      "constructiveness": {
+        "k": 2,
+        "n": 94736,
+        "H": 519.2008,
+        "p": 0.0,
+        "eta2": 0.0055,
+        "effect": "negligible",
+        "group_n": {
+          "reddit": 4660,
+          "stackexchange": 90076
+        }
+      },
+      "respect": {
+        "k": 2,
+        "n": 94736,
+        "H": 5358.5867,
+        "p": 0.0,
+        "eta2": 0.0566,
+        "effect": "small",
+        "group_n": {
+          "reddit": 4660,
+          "stackexchange": 90076
+        }
+      },
+      "social_cohesion": {
+        "k": 2,
+        "n": 94736,
+        "H": 3535.9082,
+        "p": 0.0,
+        "eta2": 0.0373,
+        "effect": "small",
+        "group_n": {
+          "reddit": 4660,
+          "stackexchange": 90076
+        }
+      }
+    },
+    "posthoc": [
+      {
+        "group_a": "reddit",
+        "group_b": "stackexchange",
+        "n_a": 4660,
+        "n_b": 90076,
+        "median_a": 2.5,
+        "median_b": 3.5,
+        "U": 115022432.0,
+        "p_raw": 0.0,
+        "p_bonf": 0.0,
+        "significant": true
+      }
+    ],
+    "group_medians": {
+      "reddit": 2.5,
+      "stackexchange": 3.5
+    }
+  },
+  "rq5": {
+    "n": 94736,
+    "correlation_matrix": {
+      "empathy": {
+        "empathy": 1.0,
+        "constructiveness": 0.8155,
+        "respect": 0.7939,
+        "social_cohesion": 0.9373
+      },
+      "constructiveness": {
+        "empathy": 0.8155,
+        "constructiveness": 1.0,
+        "respect": 0.697,
+        "social_cohesion": 0.8424
+      },
+      "respect": {
+        "empathy": 0.7939,
+        "constructiveness": 0.697,
+        "respect": 1.0,
+        "social_cohesion": 0.8903
+      },
+      "social_cohesion": {
+        "empathy": 0.9373,
+        "constructiveness": 0.8424,
+        "respect": 0.8903,
+        "social_cohesion": 1.0
+      }
+    },
+    "pca_available": true,
+    "pca_explained_variance": [
+      0.8733,
+      0.077,
+      0.0405,
+      0.0093
+    ],
+    "pca_single_factor_flag": true,
+    "pca_loadings": {
+      "PC1": {
+        "empathy": 0.5088,
+        "constructiveness": 0.4796,
+        "respect": 0.484,
+        "social_cohesion": 0.5262
+      },
+      "PC2": {
+        "empathy": 0.0912,
+        "constructiveness": 0.7111,
+        "respect": -0.6897,
+        "social_cohesion": -0.1019
+      },
+      "PC3": {
+        "empathy": 0.7266,
+        "constructiveness": -0.4999,
+        "respect": -0.4431,
+        "social_cohesion": 0.1606
+      },
+      "PC4": {
+        "empathy": -0.4526,
+        "constructiveness": -0.1202,
+        "respect": -0.3062,
+        "social_cohesion": 0.8288
+      }
+    },
+    "note": "High inter-dimension correlations (0.79-0.95) were observed in Phase 1. If PC1 > 70%, report prosociality_composite as the primary outcome and subscores as secondary descriptive findings."
+  }
+}

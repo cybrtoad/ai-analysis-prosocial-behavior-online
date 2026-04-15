@@ -1,0 +1,213 @@
+{
+  "n_matched": 293,
+  "n_claude": 293,
+  "n_human": 340,
+  "claude_path": "C:\\Users\\tlins\\Documents\\_code\\soc\\human-validation\\claude_scores_EMBARGOED.csv",
+  "human_source": "C:\\Users\\tlins\\Documents\\_code\\soc\\output\\human_labels",
+  "dimensions": {
+    "empathy": {
+      "n": 293,
+      "icc_2_1": 0.607,
+      "pearson_r": 0.6313,
+      "spearman_rho": 0.6099,
+      "mae": 0.6502,
+      "pct_within_half": 0.6485,
+      "pct_within_one": 0.8703,
+      "bias_claude_minus_human": 0.0631,
+      "std_diff": 0.8391,
+      "loa_lower": -1.5814,
+      "loa_upper": 1.7077,
+      "claude_mean": 2.3157,
+      "human_mean": 2.2526,
+      "claude_std": 1.068,
+      "human_std": 0.8084
+    },
+    "constructiveness": {
+      "n": 293,
+      "icc_2_1": 0.3932,
+      "pearson_r": 0.4738,
+      "spearman_rho": 0.4476,
+      "mae": 0.9693,
+      "pct_within_half": 0.4846,
+      "pct_within_one": 0.7099,
+      "bias_claude_minus_human": -0.6143,
+      "std_diff": 1.0994,
+      "loa_lower": -2.7691,
+      "loa_upper": 1.5404,
+      "claude_mean": 2.4949,
+      "human_mean": 3.1092,
+      "claude_std": 1.181,
+      "human_std": 0.916
+    },
+    "respect": {
+      "n": 293,
+      "icc_2_1": 0.4176,
+      "pearson_r": 0.5793,
+      "spearman_rho": 0.5939,
+      "mae": 0.9386,
+      "pct_within_half": 0.4369,
+      "pct_within_one": 0.6485,
+      "bias_claude_minus_human": 0.4573,
+      "std_diff": 1.0754,
+      "loa_lower": -1.6505,
+      "loa_upper": 2.5652,
+      "claude_mean": 3.2338,
+      "human_mean": 2.7765,
+      "claude_std": 1.3115,
+      "human_std": 0.6427
+    },
+    "social_cohesion": {
+      "n": 293,
+      "icc_2_1": 0.5694,
+      "pearson_r": 0.6288,
+      "spearman_rho": 0.6627,
+      "mae": 0.7679,
+      "pct_within_half": 0.5256,
+      "pct_within_one": 0.8191,
+      "bias_claude_minus_human": -0.0171,
+      "std_diff": 0.9525,
+      "loa_lower": -1.884,
+      "loa_upper": 1.8498,
+      "claude_mean": 2.3618,
+      "human_mean": 2.3788,
+      "claude_std": 1.225,
+      "human_std": 0.7763
+    }
+  },
+  "by_platform": {
+    "reddit": {
+      "empathy": {
+        "n": 150,
+        "icc_2_1": 0.5344,
+        "mae": 0.63,
+        "bias": 0.27
+      },
+      "constructiveness": {
+        "n": 150,
+        "icc_2_1": 0.6189,
+        "mae": 0.7333,
+        "bias": -0.36
+      },
+      "respect": {
+        "n": 150,
+        "icc_2_1": 0.4463,
+        "mae": 0.7967,
+        "bias": 0.4167
+      },
+      "social_cohesion": {
+        "n": 150,
+        "icc_2_1": 0.4949,
+        "mae": 0.7233,
+        "bias": -0.07
+      }
+    },
+    "stackexchange": {
+      "empathy": {
+        "n": 100,
+        "icc_2_1": 0.5415,
+        "mae": 0.665,
+        "bias": 0.005
+      },
+      "constructiveness": {
+        "n": 100,
+        "icc_2_1": 0.3668,
+        "mae": 0.9,
+        "bias": -0.44
+      },
+      "respect": {
+        "n": 100,
+        "icc_2_1": 0.1829,
+        "mae": 1.125,
+        "bias": 1.065
+      },
+      "social_cohesion": {
+        "n": 100,
+        "icc_2_1": 0.4312,
+        "mae": 0.855,
+        "bias": 0.265
+      }
+    },
+    "wikipedia": {
+      "empathy": {
+        "n": 43,
+        "icc_2_1": 0.0214,
+        "mae": 0.686,
+        "bias": -0.5233
+      },
+      "constructiveness": {
+        "n": 43,
+        "icc_2_1": 0.0391,
+        "mae": 1.9535,
+        "bias": -1.907
+      },
+      "respect": {
+        "n": 43,
+        "icc_2_1": 0.1912,
+        "mae": 1.0,
+        "bias": -0.814
+      },
+      "social_cohesion": {
+        "n": 43,
+        "icc_2_1": 0.0926,
+        "mae": 0.7209,
+        "bias": -0.4884
+      }
+    }
+  },
+  "by_intervention_type": {
+    "positive_reinforcement": {
+      "empathy": {
+        "n": 6,
+        "icc_2_1": 0.2017,
+        "mae": 0.75,
+        "bias": 0.5833
+      },
+      "constructiveness": {
+        "n": 6,
+        "icc_2_1": 0.5614,
+        "mae": 0.75,
+        "bias": -0.0833
+      },
+      "respect": {
+        "n": 6,
+        "icc_2_1": 0.1566,
+        "mae": 1.0,
+        "bias": 0.8333
+      },
+      "social_cohesion": {
+        "n": 6,
+        "icc_2_1": -0.0,
+        "mae": 1.0,
+        "bias": -0.1667
+      }
+    },
+    "reframe": {
+      "empathy": {
+        "n": 7,
+        "icc_2_1": 0.5116,
+        "mae": 0.7857,
+        "bias": -0.7857
+      },
+      "constructiveness": {
+        "n": 7,
+        "icc_2_1": -0.1837,
+        "mae": 2.3571,
+        "bias": -2.2143
+      },
+      "respect": {
+        "n": 7,
+        "icc_2_1": 0.1758,
+        "mae": 1.1429,
+        "bias": -0.8571
+      },
+      "social_cohesion": {
+        "n": 7,
+        "icc_2_1": 0.463,
+        "mae": 0.9286,
+        "bias": -0.9286
+      }
+    }
+  },
+  "calibration_verdict_code": "POOR",
+  "calibration_verdict_text": "Dimensions ['constructiveness', 'respect', 'social_cohesion'] have ICC < 0.6 \u2014 systematic divergence between Claude and human raters detected.  If Phase 2 scoring is not yet complete: revise the labeling prompt and re-run before proceeding.  If Phase 2 is already complete: document the affected dimensions explicitly as a methodological limitation and treat those results with additional caution in the analysis."
+}

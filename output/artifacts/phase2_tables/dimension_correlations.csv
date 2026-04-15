@@ -1,0 +1,5 @@
+,empathy,constructiveness,respect,social_cohesion
+empathy,1.0,0.8155,0.7939,0.9373
+constructiveness,0.8155,1.0,0.697,0.8424
+respect,0.7939,0.697,1.0,0.8903
+social_cohesion,0.9373,0.8424,0.8903,1.0

@@ -1,0 +1,3 @@
+tier,n,char_length_mean,char_length_median,word_count_mean,word_count_median,caps_abuse_rate_pct
+tier_d,22431,998.6,791.0,143.1,122.0,0.3
+tiers_ac,401241,930.2,651.0,145.1,108.0,0.1

@@ -1,0 +1,4 @@
+rater,spearman_rho,p_value,significant,n,deviation_low_conf,deviation_medium_conf,deviation_high_conf
+GD,0.0645,0.235207,False,340,0.411,0.457,0.512
+TL,-0.018,0.741333,False,340,0.484,0.681,0.627
+VT,-0.2129,7.6e-05,True,340,0.625,0.617,0.47

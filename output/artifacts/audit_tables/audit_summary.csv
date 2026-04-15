@@ -1,0 +1,5 @@
+category,n,pct
+total,100000,100%
+malformed,8,0.0%
+invalid_triple,494,0.5%
+valid,99498,99.5%

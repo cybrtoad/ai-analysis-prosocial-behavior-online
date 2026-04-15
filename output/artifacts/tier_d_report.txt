@@ -1,0 +1,86 @@
+==============================================================================
+  Tier D Analysis — Users With No Post-Intervention Response
+==============================================================================
+
+  Definition: records passing pre/intervention quality filters that
+  have no meaningful post-intervention text (absent, placeholder,
+  or < 30 characters).  These represent potential platform departures.
+
+  RECORD COUNTS
+  ----------------------------------------------------------------------------
+  Raw pool (unified_interventions):          449,834
+  After bot + pre/intervention filters:      423,672
+  Tier D (no meaningful post-response):       22,431  (5.3%)
+  Tiers A-C (meaningful post-response):      401,241  (94.7%)
+    of which in Phase 1 or Phase 2 sample:     3,000  (0.7%)
+
+  DEPARTURE RATE BY PLATFORM
+  ----------------------------------------------------------------------------
+  Platform            Total    Tier D   Tiers A-C    Depart%
+  reddit             19,608       188      19,420       1.0%
+  stackexchange     375,821    15,558     360,263       4.1%
+  wikipedia          28,243     6,685      21,558      23.7%
+
+  DEPARTURE RATE BY INTERVENTION TYPE
+  ----------------------------------------------------------------------------
+  Intervention Type                  Total    Tier D    Depart%
+  positive_reinforcement            13,293       503       3.8%
+  reframe                          388,570    15,819       4.1%
+  restriction                        7,420       819      11.0%
+  warning                           14,389     5,290      36.8%
+
+  PLATFORM × INTERVENTION TYPE DEPARTURE RATES
+  ----------------------------------------------------------------------------
+     platform      intervention_type  total  tier_d  departure_rate_pct
+       reddit positive_reinforcement   9459      81                 0.9
+       reddit                reframe  10149     107                 1.1
+stackexchange                reframe 375821   15558                 4.1
+    wikipedia positive_reinforcement   3834     422                11.0
+    wikipedia                reframe   2600     154                 5.9
+    wikipedia            restriction   7420     819                11.0
+    wikipedia                warning  14389    5290                36.8
+
+  PRE-INTERVENTION TEXT CHARACTERISTICS
+  ----------------------------------------------------------------------------
+  Compares the pre-intervention text of users who did not respond
+  (Tier D) vs. those who did (Tiers A-C).
+
+  tier_d        n=  22,431  char_len: mean=999 median=791  words: mean=143 median=122  caps_abuse=0.3%
+  tiers_ac      n= 401,241  char_len: mean=930 median=651  words: mean=145 median=108  caps_abuse=0.1%
+
+  RESPONSE TIME DISTRIBUTION — TIER D
+  ----------------------------------------------------------------------------
+  Tier D records with a response_time_minutes value: 15,647
+  (69.8% of all Tier D records)
+  Note: response_time_minutes in this context is the time from
+  intervention to the NEXT activity captured — not necessarily a
+  direct response.  Many Tier D records will have no value at all.
+
+  tier_d_with_rt        n= 15,647  p10=2min  p25=6min  p50=33min  p75=462min  p90=1918min
+  tiers_ac              n=396,465  p10=3min  p25=9min  p50=61min  p75=672min  p90=2478min
+
+==============================================================================
+  INTERPRETATION NOTES
+==============================================================================
+
+  These findings are descriptive associations only.  Selection bias
+  applies in both directions: users who received and responded to
+  interventions are a different population from those who did not.
+
+  Key questions to address in the thesis:
+  1. Is the departure rate consistent across platforms, or does it
+     vary?  Platform-specific norms may drive different response rates.
+  2. Are departure rates higher for punitive intervention types
+     (warning, restriction) than prosocial ones?  This is the primary
+     analytical claim Tier D supports.
+  3. Do Tier D users show different pre-intervention behavior
+     (shorter texts, higher caps abuse)?  If so, departure may reflect
+     user characteristics, not intervention effectiveness.
+
+  Framing guidance (from thesis_reframing.md):
+  'The absence of post-intervention activity may itself indicate that
+  the user left the platform following the intervention.'
+  Report as: '…was associated with a departure rate of X%…'
+  Do NOT report as: '…caused the user to leave…'
+
+==============================================================================

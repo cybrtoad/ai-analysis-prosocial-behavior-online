@@ -1,0 +1,7 @@
+confidence_type,rater,n_low,n_medium,n_high,n_total,pct_low,mean_numeric
+Tier 1 (scores),GD,19,190,131,340,5.6%,2.329
+Tier 1 (scores),TL,12,141,187,340,3.5%,2.515
+Tier 1 (scores),VT,1,149,190,340,0.3%,2.556
+Style,GD,31,111,198,340,9.1%,2.491
+Style,TL,25,98,217,340,7.4%,2.565
+Style,VT,10,174,156,340,2.9%,2.429

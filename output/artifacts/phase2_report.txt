@@ -1,0 +1,72 @@
+==============================================================================
+  Phase 2 Pattern Analysis Report
+  Prosocial Corrective Communication in Online Communities
+==============================================================================
+  Records analyzed:  94,736
+  Platforms:         reddit, stackexchange
+  Intervention types:positive_reinforcement, reframe
+  Intervener roles:  domain_expert, peer
+  Date range:        2009-07-22 22:05:47.553000+00:00 — 2024-09-30 16:44:54.740000+00:00
+
+  NOTE: All findings are associations, not causal claims.  Selection bias
+  and survivorship bias apply (see PROCESS.md Part 10.2 for framing guidance).
+
+  Prosociality Composite — Platform Means
+  ----------------------------------------------------------------------------
+  reddit           n= 4,660  mean=2.649  sd=0.943  median=2.500
+  stackexchange    n=90,076  mean=3.427  sd=0.891  median=3.500
+
+  RQ1 — Intervention Type × Prosociality Composite
+  ----------------------------------------------------------------------------
+  Kruskal-Wallis: H(1) = 1148.256,  p = 0 ***,  eta2 = 0.012 (small)
+
+  Type                            n   Median     Mean      SD
+  ----------------------------------------------------------------------------
+  positive_reinforcement      2,246    2.500    2.689   0.951
+  reframe                    92,490    3.500    3.406   0.902
+
+  RQ2b -- Intervener Role x Prosociality Composite
+  ----------------------------------------------------------------------------
+  Kruskal-Wallis: H(1) = 2720.928,  p = 0 ***,  eta2 = 0.029 (small)
+
+  Role                       n   Median     Mean      SD
+  ----------------------------------------------------------------------------
+  domain_expert         90,076    3.500    3.427   0.891
+  peer                   4,660    2.500    2.649   0.943
+
+  RQ4 — Platform Comparison
+  ----------------------------------------------------------------------------
+  Kruskal-Wallis: H(1) = 2720.928,  p = 0 ***,  eta2 = 0.029 (small)
+
+  Platform              n   Median     Mean      SD
+  ----------------------------------------------------------------------------
+  reddit            4,660    2.500    2.649   0.943
+  stackexchange    90,076    3.500    3.427   0.891
+
+  RQ3 — Response Time × Prosociality
+  ----------------------------------------------------------------------------
+  Spearman rho = 0.031,  p = 0 ***,  n = 94,736
+
+  RQ5 — Dimension Structure
+  ----------------------------------------------------------------------------
+  PCA explained variance: PC1=87.3%  PC2=7.7%  PC3=4.0%  PC4=0.9%
+  WARNING: PC1 > 70% — dimensions largely collapse to a single factor.
+           Use prosociality_composite as primary outcome in analysis.
+
+  Pearson correlations among Tier 1 dimensions:
+                         empathy  construc   respect  social_c
+  empathy                  1.000     0.816     0.794     0.937
+  constructiveness         0.816     1.000     0.697     0.842
+  respect                  0.794     0.697     1.000     0.890
+  social_cohesion          0.937     0.842     0.890     1.000
+
+  Analyses Pending Additional Data
+  ----------------------------------------------------------------------------
+  - intervention_style × prosociality (requires extending human annotation to ~100K)
+  - user_retention_7day / user_retention_30day (requires full activity timeline)
+  - immediate_behavioral_change / sustained_behavior_score
+    (requires multiple post-intervention texts per user)
+  - user_account_age_days (requires account creation date from raw platform data)
+  - pre/post toxicity scores (requires detoxify or Perspective API)
+
+==============================================================================
