@@ -3,10 +3,6 @@ pandas>=2.2
 pyarrow>=17.0
 numpy>=2.0
 
-# NLP / ML
-transformers>=4.44
-torch>=2.4
-
 # Wikipedia wikitext parsing
 mwparserfromhell>=0.6
 
