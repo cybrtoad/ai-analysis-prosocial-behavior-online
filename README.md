@@ -20,7 +20,7 @@ This repository contains the full analysis pipeline, scoring outputs, and valida
 
 - **Community context, not intervention type, is the dominant predictor** of post-intervention prosociality. Platform explains more variance than what was said or who said it.
 - **The four prosociality dimensions collapse into a single dominant factor.** PCA confirms that empathy, constructiveness, respect, and social cohesion are largely measuring one underlying construct at this scale.
-- **The AI-assisted annotation pipeline achieves strong agreement with human raters** (ICC and correlation metrics reported in `output/artifacts/claude_human_validation_report.txt`).
+- **The AI-assisted annotation pipeline is a noisy approximation of human judgment, with directional biases on specific scales rather than uniform underperformance.** (ICC and correlation metrics reported in `output/artifacts/claude_human_validation_report.txt`).
 
 ---
 
