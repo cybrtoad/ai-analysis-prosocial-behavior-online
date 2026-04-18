@@ -8,7 +8,7 @@ Tamara T. Linse — M.S. Computer Science, University of Wyoming, 2026
 
 ## About
 
-Online communities spend enormous resources managing norm-violating behavior, yet there is limited empirical evidence on which corrective communication strategies are most effective, whether the social role of the intervener matters, and how these patterns vary across platforms. Prior work is mostly small-scale and single-platform, and focused on toxicity detection rather than response effectiveness.
+Online communities spend enormous resources managing norm-violating behavior, yet there is limited empirical evidence on which corrective communication strategies are most effective, whether the social role of the intervener matters, and how these patterns vary across platforms. Prior work is mostly small-scale and single-platform and focused on toxicity detection rather than response effectiveness.
 
 This repository contains the full analysis pipeline, scoring outputs, and validation data for a study of prosocial corrective communication across three platforms — Reddit (Change My View / Conversations Gone Awry corpus), Stack Exchange (Ask Ubuntu), and Simple English Wikipedia — using a large-scale AI-assisted annotation pipeline. Approximately 100,000 interaction triples (pre-intervention behavior, the intervention itself, and post-intervention response) were extracted and scored on four prosociality dimensions using the Claude API, then validated against independent human annotation from three raters.
 
