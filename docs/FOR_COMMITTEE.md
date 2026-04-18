@@ -213,6 +213,6 @@ To re-run the full labeling pipeline from scratch, you will need an Anthropic AP
 
 ---
 
-## Note About DeBERTA Training
+## Note About DeBERTa Training
 
 The initial project plan included the training of two versions of an LLM (DeBERTa-large and DeBERTa-base) as artifacts for use by future researchers. This aspect of the project was removed during development. Some scripts (/src/split.py) retain this reference, however.  
