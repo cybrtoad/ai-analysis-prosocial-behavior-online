@@ -45,8 +45,7 @@ This repository contains the full analysis pipeline, scoring outputs, and valida
 │
 ├── scripts/                    # Utility and orchestration scripts
 │   ├── add_intervener_role.py
-│   ├── create_thesis_figures.py
-│   ├── export_chats.py
+│   ├── create_figures.py
 │   └── format-xml-row.py
 │
 ├── figures/                    # Thesis figures (PDF + PNG)
