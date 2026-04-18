@@ -210,3 +210,9 @@ python scripts/create_thesis_figures.py
 ```
 
 To re-run the full labeling pipeline from scratch, you will need an Anthropic API key and the raw platform data (see [DATA.md](DATA.md)). At ~100K records using `claude-haiku-4-5-20251001`, expect approximately $20–40 in API costs depending on record length.
+
+---
+
+## Note About DeBERTA Training
+
+The initial project plan included the training of two versions of an LLM (DeBERTa-large and DeBERTa-base) as artifacts for use by future researchers. This aspect of the project was removed during development. Some scripts (/src/split.py) retain this reference, however.  
