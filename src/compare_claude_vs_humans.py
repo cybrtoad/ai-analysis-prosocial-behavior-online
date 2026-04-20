@@ -29,9 +29,12 @@ Outputs
 
 Metrics reported
 ----------------
-  ICC(2,1)       two-way random effects, single rater, absolute agreement
+  ICC(2,k)       two-way random effects, average of k raters, absolute agreement
+                 Primary reliability metric (k=2: Claude + human consensus).
                  Target: >= 0.70 (slightly lower threshold than DeBERTa, since
                  Claude is the scoring instrument, not the final model)
+  ICC(2,1)       two-way random effects, single rater, absolute agreement
+                 Retained for reference alongside ICC(2,k).
   Pearson r      linear correlation
   Spearman rho   rank-order correlation
   MAE            mean absolute error on 1-5 scale
@@ -110,13 +113,14 @@ def _clean_pair(a: np.ndarray, b: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     return a[mask], b[mask]
 
 
-def icc_2_1(rater1: np.ndarray, rater2: np.ndarray) -> float:
+def _icc_anova_components(rater1: np.ndarray, rater2: np.ndarray):
+    """Return (n, k, ms_s, ms_r, ms_e) from two-way random-effects ANOVA."""
     a, b = _clean_pair(
         np.asarray(rater1, dtype=float), np.asarray(rater2, dtype=float)
     )
     n, k = len(a), 2
     if n < 3:
-        return float("nan")
+        return None
     data       = np.column_stack([a, b])
     grand_mean = data.mean()
     row_means  = data.mean(axis=1)
@@ -127,7 +131,26 @@ def icc_2_1(rater1: np.ndarray, rater2: np.ndarray) -> float:
     ms_s = ss_s / (n - 1)
     ms_r = ss_r / (k - 1)
     ms_e = ss_e / ((n - 1) * (k - 1))
+    return n, k, ms_s, ms_r, ms_e
+
+
+def icc_2_1(rater1: np.ndarray, rater2: np.ndarray) -> float:
+    """ICC(2,1): two-way random effects, single rater, absolute agreement."""
+    comps = _icc_anova_components(rater1, rater2)
+    if comps is None:
+        return float("nan")
+    n, k, ms_s, ms_r, ms_e = comps
     denom = ms_s + (k - 1) * ms_e + k * (ms_r - ms_e) / n
+    return float("nan") if denom == 0 else float((ms_s - ms_e) / denom)
+
+
+def icc_2_k(rater1: np.ndarray, rater2: np.ndarray) -> float:
+    """ICC(2,k): two-way random effects, average of k raters, absolute agreement."""
+    comps = _icc_anova_components(rater1, rater2)
+    if comps is None:
+        return float("nan")
+    n, k, ms_s, ms_r, ms_e = comps
+    denom = ms_s + (ms_r - ms_e) / n
     return float("nan") if denom == 0 else float((ms_s - ms_e) / denom)
 
 
@@ -145,6 +168,7 @@ def dimension_metrics(claude: pd.Series, human: pd.Series) -> dict:
 
     return {
         "n":                  n,
+        "icc_2_k":            round(icc_2_k(a, b), 4),
         "icc_2_1":            round(icc_2_1(a, b), 4),
         "pearson_r":          round(float(pd.Series(a).corr(pd.Series(b), method="pearson")),  4),
         "spearman_rho":       round(float(pd.Series(a).corr(pd.Series(b), method="spearman")), 4),
@@ -175,10 +199,11 @@ def group_breakdown(df: pd.DataFrame, group_col: str) -> dict:
                 result[str(val)][dim] = {"n": len(a), "error": "insufficient data"}
             else:
                 result[str(val)][dim] = {
-                    "n":    len(a),
+                    "n":       len(a),
+                    "icc_2_k": round(icc_2_k(a, b), 4),
                     "icc_2_1": round(icc_2_1(a, b), 4),
-                    "mae":  round(float(np.mean(np.abs(a - b))), 4),
-                    "bias": round(float(np.mean(a - b)), 4),
+                    "mae":     round(float(np.mean(np.abs(a - b))), 4),
+                    "bias":    round(float(np.mean(a - b)), 4),
                 }
     return result
 
@@ -192,16 +217,16 @@ def calibration_verdict(dim_results: dict) -> tuple[str, str]:
     Returns (verdict_code, verdict_text).
     verdict_code: 'GOOD' | 'ACCEPTABLE' | 'POOR'
     """
-    iccs = [m["icc_2_1"] for m in dim_results.values() if "icc_2_1" in m]
+    iccs = [m["icc_2_k"] for m in dim_results.values() if "icc_2_k" in m]
     if not iccs:
         return "UNKNOWN", "Insufficient data to assess calibration."
 
     mean_icc = float(np.mean(iccs))
     min_icc  = float(np.min(iccs))
     dims_below_good = [d for d, m in dim_results.items()
-                       if m.get("icc_2_1", 0) < ICC_GOOD]
+                       if m.get("icc_2_k", 0) < ICC_GOOD]
     dims_below_acc  = [d for d, m in dim_results.items()
-                       if m.get("icc_2_1", 0) < ICC_ACCEPTABLE]
+                       if m.get("icc_2_k", 0) < ICC_ACCEPTABLE]
 
     if min_icc >= ICC_GOOD:
         code = "GOOD"
@@ -266,7 +291,7 @@ def format_report(results: dict) -> str:
         "",
         "  Per-Dimension Agreement",
         "  " + "-" * (W - 2),
-        f"  {'Dimension':20s}  {'n':>4s}  {'ICC(2,1)':>8s}  {'Pearson':>7s}  "
+        f"  {'Dimension':20s}  {'n':>4s}  {'ICC(2,k)':>8s}  {'ICC(2,1)':>8s}  {'Pearson':>7s}  "
         f"{'Spearman':>8s}  {'MAE':>5s}  {'Bias':>6s}  {'<=0.5':>6s}  {'<=1.0':>6s}",
         "  " + "-" * (W - 2),
     ]
@@ -276,16 +301,17 @@ def format_report(results: dict) -> str:
         if "error" in m:
             lines.append(f"  {dim:20s}  {m['n']:>4d}  (insufficient data)")
             continue
-        flag = " ✓" if m["icc_2_1"] >= ICC_GOOD else (
-               " ~" if m["icc_2_1"] >= ICC_ACCEPTABLE else " ✗")
+        flag = " ✓" if m["icc_2_k"] >= ICC_GOOD else (
+               " ~" if m["icc_2_k"] >= ICC_ACCEPTABLE else " ✗")
         lines.append(
-            f"  {dim:20s}  {m['n']:>4d}  {m['icc_2_1']:>8.3f}{flag}  "
+            f"  {dim:20s}  {m['n']:>4d}  {m['icc_2_k']:>8.3f}{flag}  "
+            f"{m['icc_2_1']:>8.3f}  "
             f"{m['pearson_r']:>7.3f}  {m['spearman_rho']:>8.3f}  "
             f"{m['mae']:>5.3f}  {m['bias_claude_minus_human']:>+6.3f}  "
             f"{m['pct_within_half']*100:>5.1f}%  {m['pct_within_one']*100:>5.1f}%"
         )
 
-    iccs = [m["icc_2_1"] for m in results["dimensions"].values() if "icc_2_1" in m]
+    iccs = [m["icc_2_k"] for m in results["dimensions"].values() if "icc_2_k" in m]
     mean_icc = float(np.mean(iccs)) if iccs else float("nan")
     lines += [
         "  " + "-" * (W - 2),
@@ -317,23 +343,23 @@ def format_report(results: dict) -> str:
 
     # Platform breakdown
     if results.get("by_platform"):
-        lines += ["", "  Per-Platform Mean ICC (across dimensions)",
+        lines += ["", "  Per-Platform Mean ICC(2,k) (across dimensions)",
                   "  " + "-" * (W - 2)]
         for platform, dim_data in results["by_platform"].items():
-            iccs_p = [v["icc_2_1"] for v in dim_data.values() if "icc_2_1" in v]
+            iccs_p = [v["icc_2_k"] for v in dim_data.values() if "icc_2_k" in v]
             maes_p = [v["mae"]     for v in dim_data.values() if "mae"     in v]
             mean_i = float(np.mean(iccs_p)) if iccs_p else float("nan")
             mean_m = float(np.mean(maes_p)) if maes_p else float("nan")
-            lines.append(f"  {platform:20s}  mean ICC = {mean_i:.3f}  mean MAE = {mean_m:.3f}")
+            lines.append(f"  {platform:20s}  mean ICC(2,k) = {mean_i:.3f}  mean MAE = {mean_m:.3f}")
 
     # Intervention type breakdown
     if results.get("by_intervention_type"):
-        lines += ["", "  Per-Intervention-Type Mean ICC (across dimensions)",
+        lines += ["", "  Per-Intervention-Type Mean ICC(2,k) (across dimensions)",
                   "  " + "-" * (W - 2)]
         for itype, dim_data in results["by_intervention_type"].items():
-            iccs_t = [v["icc_2_1"] for v in dim_data.values() if "icc_2_1" in v]
+            iccs_t = [v["icc_2_k"] for v in dim_data.values() if "icc_2_k" in v]
             mean_i = float(np.mean(iccs_t)) if iccs_t else float("nan")
-            lines.append(f"  {itype:25s}  mean ICC = {mean_i:.3f}")
+            lines.append(f"  {itype:25s}  mean ICC(2,k) = {mean_i:.3f}")
 
     # Verdict
     code  = results.get("calibration_verdict_code", "UNKNOWN")
@@ -482,7 +508,7 @@ def main() -> None:
         dim_results[dim] = m
         if "error" not in m:
             log.info(
-                f"  {dim:20s}  ICC={m['icc_2_1']:.3f}  "
+                f"  {dim:20s}  ICC(2,k)={m['icc_2_k']:.3f}  ICC(2,1)={m['icc_2_1']:.3f}  "
                 f"Pearson={m['pearson_r']:.3f}  MAE={m['mae']:.3f}  "
                 f"Bias={m['bias_claude_minus_human']:+.3f}"
             )

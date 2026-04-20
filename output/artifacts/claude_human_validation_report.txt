@@ -3,19 +3,19 @@
   Prosocial Interventions in Online Moderation
 ==================================================================================
   Matched records:    293  (of 293 Claude, 340 human-annotated)
-  Claude scores:      human-validation/claude_scores_EMBARGOED.csv
-  Human consensus:    output/human_labels
+  Claude scores:      C:\Users\tlins\Documents\_code\soc\human-validation\claude_scores_EMBARGOED.csv
+  Human consensus:    C:\Users\tlins\Documents\_code\soc\output\human_labels
 
   Per-Dimension Agreement
   --------------------------------------------------------------------------------
-  Dimension                n  ICC(2,1)  Pearson  Spearman    MAE    Bias   <=0.5   <=1.0
+  Dimension                n  ICC(2,k)  ICC(2,1)  Pearson  Spearman    MAE    Bias   <=0.5   <=1.0
   --------------------------------------------------------------------------------
-  empathy                293     0.607 ~    0.631     0.610  0.650  +0.063   64.8%   87.0%
-  constructiveness       293     0.393 ✗    0.474     0.448  0.969  -0.614   48.5%   71.0%
-  respect                293     0.418 ✗    0.579     0.594  0.939  +0.457   43.7%   64.8%
-  social_cohesion        293     0.569 ✗    0.629     0.663  0.768  -0.017   52.6%   81.9%
+  empathy                293     0.755 ✓     0.607    0.631     0.610  0.650  +0.063   64.8%   87.0%
+  constructiveness       293     0.565 ✗     0.393    0.474     0.448  0.969  -0.614   48.5%   71.0%
+  respect                293     0.589 ✗     0.418    0.579     0.594  0.939  +0.457   43.7%   64.8%
+  social_cohesion        293     0.726 ✓     0.569    0.629     0.663  0.768  -0.017   52.6%   81.9%
   --------------------------------------------------------------------------------
-  Mean ICC: 0.497   Target >= 0.7 (✓) / >= 0.6 (~) / < 0.6 (✗)
+  Mean ICC: 0.659   Target >= 0.7 (✓) / >= 0.6 (~) / < 0.6 (✗)
 
   Bias = mean(Claude − Human).  Positive = Claude scores higher.
   LoA = 95% limits of agreement (Bland-Altman).
@@ -30,21 +30,21 @@
   respect                  3.234     1.312    2.776    0.643  [-1.651, +2.565]
   social_cohesion          2.362     1.225    2.379    0.776  [-1.884, +1.850]
 
-  Per-Platform Mean ICC (across dimensions)
+  Per-Platform Mean ICC(2,k) (across dimensions)
   --------------------------------------------------------------------------------
-  reddit                mean ICC = 0.524  mean MAE = 0.721
-  stackexchange         mean ICC = 0.381  mean MAE = 0.886
-  wikipedia             mean ICC = 0.086  mean MAE = 1.090
+  reddit                mean ICC(2,k) = 0.685  mean MAE = 0.721
+  stackexchange         mean ICC(2,k) = 0.538  mean MAE = 0.886
+  wikipedia             mean ICC(2,k) = 0.152  mean MAE = 1.090
 
-  Per-Intervention-Type Mean ICC (across dimensions)
+  Per-Intervention-Type Mean ICC(2,k) (across dimensions)
   --------------------------------------------------------------------------------
-  positive_reinforcement     mean ICC = 0.230
-  reframe                    mean ICC = 0.242
+  positive_reinforcement     mean ICC(2,k) = 0.331
+  reframe                    mean ICC(2,k) = 0.290
 
   Calibration Verdict
   --------------------------------------------------------------------------------
   POOR
 
-  Dimensions ['constructiveness', 'respect', 'social_cohesion'] have ICC < 0.6 — systematic divergence between Claude and human raters detected.  If Phase 2 scoring is not yet complete: revise the labeling prompt and re-run before proceeding.  If Phase 2 is already complete: document the affected dimensions explicitly as a methodological limitation and treat those results with additional caution in the analysis.
+  Dimensions ['constructiveness', 'respect'] have ICC < 0.6 — systematic divergence between Claude and human raters detected.  If Phase 2 scoring is not yet complete: revise the labeling prompt and re-run before proceeding.  If Phase 2 is already complete: document the affected dimensions explicitly as a methodological limitation and treat those results with additional caution in the analysis.
 
 ==================================================================================
